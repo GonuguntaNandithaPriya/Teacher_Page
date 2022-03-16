@@ -1,3 +1,5 @@
+
+import 'package:flutter/material.dart';
 class CardItem{
   
   final String title;
@@ -33,4 +35,36 @@ List<CardItem> items = [
       title: '4',
       subtitle: 'Today@1:30 PM',
     ),
+  ];
+ 
+
+class CardItem1{
+  final Color color;
+  final String title;
+  final String subtitle;
+  const CardItem1({required this.color,required this.title,required this.subtitle});
+}
+ List<CardItem1> items1 = [
+    const CardItem1(
+     color:Colors.orange,
+      title: 'Ai Lev-1 batch5',
+      subtitle: "Feb 25th 2022 at 12 pm",
+    ),
+    const CardItem1(
+      color:Colors.black,
+      title: 'Ai Lev-1 batch4',
+      subtitle: "Feb 25th 2022 at 2 pm",
+    ),
+    const CardItem1(
+     color:Colors.blue,
+      title: 'Ai Lev-1 batch3',
+      subtitle: "Feb 28th 2022 at 2 pm",
+    ),
+ const CardItem1(
+     color:Colors.orange,
+      title: 'Ai Lev-1 batch5',
+      subtitle: "Feb 28th 2022 at 12 pm",
+    ),
+ 
+    
   ];
