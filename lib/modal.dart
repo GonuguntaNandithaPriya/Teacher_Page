@@ -6,6 +6,17 @@ class CardItem{
   final String subtitle;
   const CardItem({required this.title,required this.subtitle});
 }
+class coursedet {
+  String course;
+ 
+  coursedet({required this.course});
+}
+class BatchItem{
+  
+  final String title;
+  final String subtitle;
+  const BatchItem({required this.title,required this.subtitle});
+}
 List<CardItem> items = [
     const CardItem(
       title: 'AI LEVEL 1 Batch 5 ',
@@ -67,4 +78,30 @@ class CardItem1{
     ),
  
     
+  ];
+  List<BatchItem> batch = [
+    const BatchItem(
+      
+      title: 'BATCH-1',
+      subtitle: '4/20',
+    ),
+    const BatchItem(
+     
+      title: 'BATCH-2',
+      subtitle: '5/20',
+    ),
+    const BatchItem(
+      
+     title: 'BATCH-3',
+      subtitle: '5/20',
+    ),
+    const BatchItem(
+     title: 'BATCH-4',
+      subtitle: '5/20',
+    ),
+    const BatchItem(
+      
+      title: 'BATCH-5',
+      subtitle: '5/20',
+    ),
   ];
