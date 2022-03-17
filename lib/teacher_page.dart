@@ -208,7 +208,7 @@ class _TeacherPageState extends State<TeacherPage> {
                             width:1000,
                             child: Divider(
                               endIndent: 45,
-                              indent: 43,
+                              indent: 44,
                               color: Colors.indigo,
                             ),
                           ),
@@ -219,8 +219,8 @@ class _TeacherPageState extends State<TeacherPage> {
                                 size: 34.0,
                               ),
                               SizedBox(
-                                height: 90,
-                                width: 600,
+                                height: 100,
+                                width: 850,
                                 child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   shrinkWrap: true,
@@ -228,7 +228,7 @@ class _TeacherPageState extends State<TeacherPage> {
                                   itemBuilder:
                                       (BuildContext context, int index) =>
                                           Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     child: batchSection(
                                       batchItem: batch[index],
                                     ),
@@ -241,14 +241,26 @@ class _TeacherPageState extends State<TeacherPage> {
                               ),
                             ],
                           ),
-                          notifications(
-                              'assets/images/note.jpg',
-                              "New Batch Start from 10th March at 2.00pm ",
-                              "New Batch Start from 10th March at 2.00pm "),
-                          float(),
+                          Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top:20.0,left: 40),
+                                child: Text('Latest Notifications:',style: TextStyle(
+                                          color: Color.fromARGB(255, 6, 38, 145),
+                                          fontWeight: FontWeight.bold)),
+                              ),
+                              notifications(
+                                  'assets/images/note.jpg',
+                                  "New Batch Start from 10th March at 2.00pm ",
+                                  "New Batch Start from 10th March at 2.00pm "),
+                            ],
+                          ),
+                          
                         ])
-                  ])
-                ]))));
+                  ]),
+                  Align(alignment: Alignment.bottomRight,child:float(),),
+                ]))
+                ));
   }
 
   Widget taskBatch({required CardItem item}) => Container(
@@ -429,13 +441,13 @@ class _TeacherPageState extends State<TeacherPage> {
   }
 
   Widget batchSection({required BatchItem batchItem}) => Container(
-        width: 100,
+        width: 120,
         decoration: BoxDecoration(
           color: Colors.orange,
-          borderRadius: const BorderRadius.all(Radius.circular(25)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(28, 0, 0, 0),
+          padding: const EdgeInsets.fromLTRB(32, 0, 0, 0),
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             SizedBox(
               child: Column(
@@ -524,7 +536,7 @@ class _TeacherPageState extends State<TeacherPage> {
       onPressed: () {
         // Add your onPressed code here!
       },
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.orange,
       child: const Icon(Icons.message),
     );
   }
