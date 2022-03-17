@@ -104,4 +104,14 @@ class CardItem1{
       title: 'BATCH-5',
       subtitle: '5/20',
     ),
+     const BatchItem(
+      
+      title: 'BATCH-6',
+      subtitle: '5/20',
+    ),
+     const BatchItem(
+      
+      title: 'BATCH-7',
+      subtitle: '5/20',
+    ),
   ];

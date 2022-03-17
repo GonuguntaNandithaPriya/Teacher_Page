@@ -207,6 +207,8 @@ class _TeacherPageState extends State<TeacherPage> {
                           SizedBox(
                             width:1000,
                             child: Divider(
+                              endIndent: 45,
+                              indent: 43,
                               color: Colors.indigo,
                             ),
                           ),
