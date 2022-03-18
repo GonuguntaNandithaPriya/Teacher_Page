@@ -26,13 +26,13 @@ class _TeacherPageState extends State<TeacherPage> {
         home: Scaffold(
             appBar: AppBar(
                 leading: Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Image.asset(
                       'images/skill_astra_logo.png',
                     )),
                 leadingWidth: 750,
                 title: Column(
-                  children: [
+                  children: const [
                     Text(
                       'Teacher Name',
                       style: TextStyle(
@@ -49,7 +49,7 @@ class _TeacherPageState extends State<TeacherPage> {
                     )
                   ],
                 ),
-                flexibleSpace: Image(
+                flexibleSpace: const Image(
                   image: AssetImage('images/color.png'),
                   fit: BoxFit.cover,
                 ),
@@ -67,9 +67,9 @@ class _TeacherPageState extends State<TeacherPage> {
                   menuCard(context),
                   Row(
                     children: [
-                      Padding(
+                     const  Padding(
                         padding:
-                            const EdgeInsets.fromLTRB(194.0, 15.0, 0.0, 0.0),
+                             EdgeInsets.fromLTRB(194.0, 15.0, 0.0, 0.0),
                         child: Align(
                             alignment: Alignment.topLeft,
                             child: Text("Sessions:",
@@ -86,7 +86,7 @@ class _TeacherPageState extends State<TeacherPage> {
                               onPressed: () {
                                 print('VIEW ALL');
                               },
-                              child: Text("View All",
+                              child: const Text("View All",
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 6, 38, 145),
                                       fontWeight: FontWeight.bold)),
@@ -98,9 +98,9 @@ class _TeacherPageState extends State<TeacherPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(170.0, 15.0, 0.0, 0.0),
                     child: SizedBox(
-                      height: 170.0,
+                      height: 190.0,
                       child: ListView.builder(
-                        physics: ClampingScrollPhysics(),
+                        physics: const ClampingScrollPhysics(),
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         itemCount: 4,
@@ -111,9 +111,9 @@ class _TeacherPageState extends State<TeacherPage> {
                   ),
                   Row(
                     children: [
-                      Padding(
+                      const Padding(
                         padding:
-                            const EdgeInsets.fromLTRB(194.0, 20.0, 0.0, 0.0),
+                           EdgeInsets.fromLTRB(194.0, 20.0, 0.0, 0.0),
                         child: Align(
                             alignment: Alignment.topLeft,
                             child: Text("Tasks Batches",
@@ -131,14 +131,14 @@ class _TeacherPageState extends State<TeacherPage> {
                                   print('VIEW ALL');
                                 },
                                 icon: const Icon(Icons.arrow_drop_down_circle),
-                                label: Text("View All",
+                                label: const Text("View All",
                                     style: TextStyle(
                                         color: Color.fromARGB(255, 6, 38, 145),
                                         fontWeight: FontWeight.bold))),
                           )),
-                      Padding(
+                      const Padding(
                         padding:
-                            const EdgeInsets.fromLTRB(80.0, 20.0, 0.0, 0.0),
+                            EdgeInsets.fromLTRB(80.0, 20.0, 0.0, 0.0),
                         child: Align(
                             alignment: Alignment.topLeft,
                             child: Text("Your Courses",
@@ -168,7 +168,7 @@ class _TeacherPageState extends State<TeacherPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 400,
                       width: 80,
                       child: VerticalDivider(
@@ -190,12 +190,12 @@ class _TeacherPageState extends State<TeacherPage> {
                                 itemBuilder:
                                     (BuildContext context, int index) =>
                                         Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding:const  EdgeInsets.all(8.0),
                                   child: TextButton(
                                     onPressed: () {},
                                     child: Text(
                                       stocksList1[index].course,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Color.fromARGB(255, 4, 52, 136),
                                       ),
                                     ),
@@ -204,7 +204,7 @@ class _TeacherPageState extends State<TeacherPage> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width:1000,
                             child: Divider(
                               endIndent: 45,
@@ -214,7 +214,7 @@ class _TeacherPageState extends State<TeacherPage> {
                           ),
                           Row(
                             children: [
-                              Icon(
+                             const  Icon(
                                 Icons.arrow_back_ios,
                                 size: 34.0,
                               ),
@@ -235,7 +235,7 @@ class _TeacherPageState extends State<TeacherPage> {
                                   ),
                                 ),
                               ),
-                              Icon(
+                              const Icon(
                                 Icons.arrow_forward_ios,
                                 size: 34.0,
                               ),
@@ -243,16 +243,39 @@ class _TeacherPageState extends State<TeacherPage> {
                           ),
                           Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top:20.0,left: 40),
+                              const Padding(
+                                padding:  EdgeInsets.only(top:20.0,left: 40),
                                 child: Text('Latest Notifications:',style: TextStyle(
                                           color: Color.fromARGB(255, 6, 38, 145),
                                           fontWeight: FontWeight.bold)),
                               ),
-                              notifications(
-                                  'assets/images/note.jpg',
-                                  "New Batch Start from 10th March at 2.00pm ",
-                                  "New Batch Start from 10th March at 2.00pm "),
+                              Row(
+                                children: [
+                                  notifications(
+                                      'assets/images/assignments.png',
+                                      "New Batch Start from 10th March at 2.00pm ",
+                                      "for More Details Click Here"),
+                                  notifications(
+                                      'assets/images/material.png',
+                                      "You Have Pending Assignments for Verification ",
+                                      "for More Details Click Here"),
+                                ],
+                              ),
+                            Row(
+                              children: [
+                                notifications(
+                                      'assets/images/material.png',
+                                      "New Batch Start from 10th March at 2.00pm ",
+                                      "for More Details Click Here"),
+                                
+
+                                      notifications(
+                                      'assets/images/assignments.png',
+                                      "New Batch Start from 10th March at 2.00pm ",
+                                      "for More Details Click Here"),
+                              ],
+                            ),
+                            
                             ],
                           ),
                           
@@ -266,8 +289,8 @@ class _TeacherPageState extends State<TeacherPage> {
   Widget taskBatch({required CardItem item}) => Container(
       height: 120,
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 252, 242, 236),
-        border: Border.all(color: Color.fromARGB(255, 252, 226, 209), width: 3),
+        color: const Color.fromARGB(255, 252, 242, 236),
+        border: Border.all(color: const Color.fromARGB(255, 252, 226, 209), width: 3),
         borderRadius: const BorderRadius.all(Radius.circular(15)),
       ),
       child: Padding(
@@ -317,16 +340,16 @@ class _TeacherPageState extends State<TeacherPage> {
             alignment: Alignment.topRight,
             child: ElevatedButton(
                 onPressed: () {},
-                child: Text('View All', style: const TextStyle(fontSize: 10)),
+                child: const Text('View All', style:  TextStyle(fontSize: 10)),
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(70, 30),
-                    primary: Color.fromARGB(163, 252, 156, 46))),
+                    primary: const Color.fromARGB(163, 252, 156, 46))),
           ),
         ]),
       ));
   Widget topCard(BuildContext context, {required CardItem1 item1}) =>
       Column(children: [
-        // const SizedBox(height: 20.0),
+      
         Container(
           height: 155.0,
           width: 310.0,
@@ -338,6 +361,7 @@ class _TeacherPageState extends State<TeacherPage> {
           ),
           child: Column(
             children: [
+                const SizedBox(height: 5.0),
               const SizedBox(height: 2, width: 5),
               Text(item1.title,
                   style: const TextStyle(fontSize: 18, color: Colors.white)),
@@ -354,10 +378,10 @@ class _TeacherPageState extends State<TeacherPage> {
                   Column(
                     children: [
                       circleImages('images/assignments.png', 'Live Sessions'),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
-                      Text(
+                      const Text(
                         "Live session",
                         style: TextStyle(fontSize: 10, color: Colors.white),
                       ),
@@ -367,10 +391,10 @@ class _TeacherPageState extends State<TeacherPage> {
                   Column(
                     children: [
                       circleImages('images/material.png', 'Materials'),
-                      SizedBox(
+                     const SizedBox(
                         height: 6,
                       ),
-                      Text("Materials",
+                      const Text("Materials",
                           style: TextStyle(fontSize: 10, color: Colors.white)),
                     ],
                   ),
@@ -378,10 +402,10 @@ class _TeacherPageState extends State<TeacherPage> {
                   Column(
                     children: [
                       circleImages('images/assignments.png', 'Assignments'),
-                      SizedBox(
+                      const SizedBox(
                         height: 6,
                       ),
-                      Text(
+                      const Text(
                         "Assignments",
                         style: TextStyle(fontSize: 10, color: Colors.white),
                       ),
@@ -402,25 +426,25 @@ class _TeacherPageState extends State<TeacherPage> {
             // padding: const EdgeInsets.all(10.0),
             // margin: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Color.fromARGB(159, 139, 85, 23),
+              color: const Color.fromARGB(159, 139, 85, 23),
               borderRadius: BorderRadius.circular(0.0),
             ),
             child: Row(
               children: [
-                SizedBox(width: 190),
+               const SizedBox(width: 190),
                 // Text("DashBoard",style:TextStyle(color:Colors.white,fontSize: 14,fontWeight: FontWeight.w500)),
 
                 tabs('Dashboard'),
-                SizedBox(width: 50),
+               const SizedBox(width: 50),
                 // Text("Assignments",style:TextStyle(color:Colors.white,fontSize: 14,fontWeight: FontWeight.w500)),
                 tabs('Assignments'),
-                SizedBox(width: 50),
+               const SizedBox(width: 50),
                 // Text("Assignments",style:TextStyle(color:Colors.white,fontSize: 14,fontWeight: FontWeight.w500)),
                 tabs('Attendance'),
 
-                SizedBox(width: 50),
+               const SizedBox(width: 50),
                 tabs('Calender'),
-                SizedBox(width: 50),
+               const SizedBox(width: 50),
                 tabs('Chat'),
               ],
             ),
@@ -434,7 +458,7 @@ class _TeacherPageState extends State<TeacherPage> {
       },
       child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
             color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
       ),
     );
@@ -442,9 +466,9 @@ class _TeacherPageState extends State<TeacherPage> {
 
   Widget batchSection({required BatchItem batchItem}) => Container(
         width: 120,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.orange,
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
+          borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(32, 0, 0, 0),
@@ -458,7 +482,7 @@ class _TeacherPageState extends State<TeacherPage> {
                     children: [
                       Text(
                         batchItem.title,
-                        style: const TextStyle(fontSize: 10),
+                        style:  TextStyle(fontSize: 10),
                       ),
                       Text(
                         batchItem.subtitle,
@@ -473,42 +497,46 @@ class _TeacherPageState extends State<TeacherPage> {
         ),
       );
   Widget notifications(String url, String title, String subtitle) {
-    return Container(
-      height: 120,
+    return SizedBox(
+      height: 110,
       width: 450,
       child: Card(
-        margin: const EdgeInsets.all(20),
+        margin: const EdgeInsets.all(15),
         shape: const RoundedRectangleBorder(
-            side: const BorderSide(color: Colors.lightBlue, width: 2),
-            borderRadius: const BorderRadius.all(const Radius.circular(10))),
+            side:  BorderSide(color: Colors.lightBlue, width: 2),
+            borderRadius:  BorderRadius.all( Radius.circular(10))),
         child: Row(
           children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-            ),
-            CircleAvatar(
-              backgroundImage: AssetImage(url),
-              // backgroundImage: const AssetImage('assets/images/note.jpg'),
+            // const Padding(
+            //   padding: EdgeInsets.only(left: 20),
+            // ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20,0,0,0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage(url),
+                // backgroundImage: const AssetImage('assets/images/note.jpg'),
 
-              radius: 30,
+                radius: 27,
+              ),
             ),
-            Column(
+            Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 20,
-                ),
+                
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 25, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(20,20,0,0),
                   child: Text(
                     title,
                     // "New Batch Start from 10th March at 2.00pm ",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text(
-                  subtitle,
-                  //"for More Details Click Here",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20,5,0,0),
+                  child: Text(
+                    subtitle,
+                    //"for More Details Click Here",
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
@@ -537,7 +565,7 @@ class _TeacherPageState extends State<TeacherPage> {
         // Add your onPressed code here!
       },
       backgroundColor: Colors.orange,
-      child: const Icon(Icons.message),
+      child:const Icon(Icons.message),
     );
   }
 }
